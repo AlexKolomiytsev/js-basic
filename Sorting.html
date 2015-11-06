@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		// ::::: The Fortune Teller
+		var numOfChildrens = 3;
+		var father = "Alex";
+		var mother = "Marry";
+		var geolocation = "Kyiv";
+
+		console.log("Yot will be a " + father + " in " + geolocation + ", and married to " + mother + " with " + numOfChildrens + " kids ");
+
+		// ::::: The Age Calculator
+		var year = 2015;
+		var birthYear1 = 1994;
+		var birthYear2 = 1995;
+
+
+		var howOld1 = year - birthYear1;
+		var howOld2 = year - birthYear2;
+
+		console.log("They are either " + howOld1 + " or " + howOld2);
+
+		// ::::: The Lifetime Supply Calculator
+		var myAge = 21;
+		var maxAge = 80;
+		var estEmountPerDay = 3;
+		var eatTotal = maxAge * estEmountPerDay;
+
+		console.log("You will need " + eatTotal + " to last you until the ripe old age of " + myAge);
+
+		// ::::: The Geometrizer
+		var radius = 10;
+		var circumference = 2*3.14*radius;
+		console.log("The circumference is " + circumference);
+
+		var area = 3.14*radius*radius;
+		console.log("The area is " + area);
+
+		// ::::: The Temperature Converter
+		var celsius = 35;
+		console.log(celsius + " C is " + (celsius*1.8 + 32) + " F");
+		var fahrenheit = 95;
+		console.log(fahrenheit + " F is " + (fahrenheit - 32)/1.8 + " C");
+
+
+		// ::::: Write a JavaScript program that accept two integers and display the larger
+		var firstNum = 10;
+		var secondNum = 15;
+
+		if (firstNum >= secondNum) {
+			console.log(firstNUm + " is a larger number, than " + secondNum);
+		}
+		else {
+			console.log(secondNum + " is a larger number, than " + firstNum);
+		}
+
+		// ::::: Write a JavaScript conditional statement to sort three numbers
+		var number1 = 12512222, number2 = 5212; number3 = 5221;
+
+		var largest;
+		var middle;
+		var smallest;
+
+		if (number1>number2) {
+			if (number1>number3) {
+				largest = number1;
+
+				if (number2>number3) {
+					middle = number2;
+					smallest = number3;
+				}
+				else  {
+					middle = number3;
+					smallest = number2;
+				}
+			}
+		}
+
+		else if (number2>number1) {
+			if (number2>number3) {
+				largest = number2;
+
+				if (number1>number3) {
+					middle = number1;
+					smallest = number3;
+				}
+				else {
+					middle = number3;
+					smallest = number1;
+				}
+			}
+		}
+		else if (number3>number1) {
+			if (number3>number2) {
+				largest = number3;
+
+				if (number1>number2){
+					middle = number1;
+					smallest = number2;
+				}
+				else{
+					middle = number2;
+					smallest = number1;
+				}
+
+			}
+		}
+		console.log("::: SORT :::")
+		console.log(largest);
+		console.log(middle);
+		console.log(smallest);
+
+		// ::::: Write a JavaScript conditional statement to find the largest of five numbers. 
+		var number1 = 1, number2 = 2; number3 = 3, number4 = 425, number5 = 5;
+
+		var largest;
+
+		if (number1>number2) {
+			if(number1>number3) {
+				if(number1>number4){
+					if(number1>number5){
+							largest = number1;
+					}
+				}
+			}
+		}
+		if (number2>number1) {
+			if(number2>number3) {
+				if(number2>number4){
+					if(number2>number5){
+							largest = number2;
+					}
+				}
+			}
+		}
+		if (number3>number1) {
+			if(number3>number2) {
+				if(number3>number4){
+					if(number3>number5){
+							largest = number3;
+					}
+				}
+			}
+		}
+		if (number4>number1) {
+			if(number4>number2) {
+				if(number4>number3){
+					if(number4>number5){
+							largest = number4;
+					}
+				}
+			}
+		}
+		if (number5>number1) {
+			if(number5>number2) {
+				if(number5>number3){
+					if(number5>number4){
+							largest = number5;
+					}
+				}
+			}
+		}
+		console.log("::: LARGEST NUMBER :::")
+		console.log(largest);
+
+	</script>
+</body>
+</html>

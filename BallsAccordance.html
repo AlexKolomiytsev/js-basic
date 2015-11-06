@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+		Create program for the following algorithm
+		Input balls from 0 to 100. 
+		Output the received assessment according to the rules:
+		А		100-95
+		B		85-94
+		C		75-84
+		D		65-74
+		E		60-64
+		FX	0-59
+	*/
+
+	var balls = parseInt(prompt("Enter an some balls?"));
+
+	if (balls >= 0 && balls <= 100) {
+		if (balls >= 95) {
+			document.write("<br>Your balls is " + balls + ": A");
+		}
+		else if (balls >= 85) {
+			document.write("<br>Your balls is " + balls + ": B");	
+		}
+		else if (balls >= 75) {
+			document.write("<br>Your balls is " + balls + ": C");	
+		}
+		else if (balls >= 65) {
+			document.write("<br>Your balls is " + balls + ": D");	
+		}
+		else if (balls >= 60) {
+			document.write("<br>Your balls is " + balls + ": E");	
+		}
+		else if (balls >= 0) {
+			document.write("<br>Your balls is " + balls + ": FX");	
+		}
+	}
+	else {
+		document.write("Enter an integer number in [0 .. 100]");
+	}
+	</script>
+</body>
+</html>

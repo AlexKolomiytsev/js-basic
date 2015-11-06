@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a = 23.312312;
+		var b = 23.789;
+		var c = 12.5;
+		var d = 99.9;
+
+		document.write(" - variables: <br>" + a + ", <br>" + b + ", <br>" + c + ", <br>" + d);
+
+		var floor1 = Math.floor(a);
+		var floor2 = Math.floor(b);
+		var floor3 = Math.floor(c);
+		var floor4 = Math.floor(d);
+
+		var ceil1 = Math.ceil(a);
+		var ceil2 = Math.ceil(b);
+		var ceil3 = Math.ceil(c);
+		var ceil4 = Math.ceil(d);
+
+		var round1 = Math.round(a);
+		var round2 = Math.round(b);
+		var round3 = Math.round(c);
+		var round4 = Math.round(d);
+
+		document.write("<br><br>"+floor1 + ", <br>" + floor2 + ", <br>" + floor3 + ", <br>" + floor4 + ", <br>" );
+
+		document.write("<br><br>"+ceil1 + ", <br>" + ceil2 + ", <br>" + ceil3 + ", <br>" + ceil4 + ", <br>" );
+		document.write("<br><br>"+round1 + ", <br>" + round2 + ", <br>" + round3 + ", <br>" + round4 + ", <br><br>" );
+
+		var sqrt = Math.sqrt(16); document.write("<br>sqrt of 16: " + sqrt);
+		var pow = Math.pow(10,2); document.write("<br>pow 10 to 2: " + pow);
+		var abs = Math.abs(-201); document.write("<br>abs of -201: " + abs);
+
+
+		var min = Math.min(12, 23, 5, 34, 56, 7);
+		var max = Math.max(12, 23, 5, 34, 56, 7);
+		document.write("<br>" + min + "<br>" + max + "<br><br>" );
+
+		var random1 = Math.round(20 + Math.random()*10);
+		document.write(random1);
+		var random2 = Math.round(100 + Math.random()*1000);
+		document.write("<br>"+random2);
+
+
+		var conf = confirm("Press OK or Cancel");
+		var res = conf ? "<br>confirm is true!" : "<br>confirm is false!";
+		document.write(res);
+
+		// :::::::
+
+		var input = prompt("Enter your favourite programming language:");
+		//input.upperCase();
+		var text;
+
+		switch(input) {
+			case "JS":
+				text = "JS is a great language!";
+				break;
+			case "PHP":
+				text = "PHP is a good language!";
+				break;
+			case "C++":
+				text = "C++ is very difficult language!";
+				break;
+			default:
+				text = "I hate programming";
+		}
+
+		alert(text);
+
+		// :::::::
+
+		var a = 5;
+		var b = 20;
+
+		for (var i = a; i <= b; i++) {
+			if(i%2==0) {
+			
+			}
+		};
+
+ </script>
+</body>
+</html>
