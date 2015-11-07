@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a = 5;
+		var b = 25;
+		//var c = 455;
+
+		var sum = 0;
+		var count = 0;
+		//var sumFromPreviousStep = 0; //сумма предыдущего шага 
+
+		for(i = a; i <= b; i++) {
+			//if (i == c) break;
+			if (i%2 == 1) {
+				sum += i;
+			}
+			else {
+				count++;
+			}
+		}
+		console.log("Sum of odd numbers: " + sum);
+		console.log("Count of even numbers: " + count); 
+
+		var sum = 0;
+		var count = 0;
+		while (a <= b) {
+			//var i = a;
+			if (a%2 == 1) {
+				sum += a;
+			}
+			else {
+				count++;
+			}
+			a++;
+		}
+		console.log("Sum of odd numbers: " + sum);
+		console.log("Count of even numbers: " + count);
+
+		var sum = 0;
+		var count = 0;
+		a=5;
+		do {
+			if (a%2 == 1) {
+				sum += a;
+			}
+			else {
+				count++;
+			}
+			a++;
+		}
+		while (a <= b)
+		console.log("Sum of odd numbers: " + sum);
+		console.log("Count of even numbers: " + count);
+
+		// ::::::
+
+		for (var i = 1000; i <= 9999; i++){
+			a = i % 10;
+			b = Math.floor(i / 10) % 10;
+			c = Math.floor(i / 100) % 10;
+			d = Math.floor(i / 1000) % 10;
+
+			if ((a+b+c+d) == (a*b*c*d)){
+				document.write("<br>"+i+" --- "+a+"+"+b+"+"+c+"+"+d+" = "+a+"*"+b+"*"+c+"*"+d + " = " + (a+b+c+d));
+			}
+		}
+
+
+
+	</script>
+</body>
+</html>
