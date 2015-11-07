@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//Написать программу для вывода на экран значений функции   на отрезке от –5 до 5 с шагом 0,2.
+	//Дополнительно: изменить текст программы так, чтобы границы отрезка и шаг мог указывать пользователь,
+	//при этом значение шага не должно превышать пятой части от длины отрезка.
+	var a = parseInt(prompt("Start of interval: "));
+	var b = parseInt(prompt("End of interval: "));
+
+	var step = parseFloat(prompt("Step: "));
+
+	var range = (b - a);
+
+	if (step <= (1/5*range)) {
+		document.write("Values of the function: <br>");
+		for (var x = a; x <= b; x += step)
+		{
+			var y = (Math.pow(x,2) + 2 * x + 7).toFixed(2);
+			document.write(" .. "+y); 
+		}
+	}
+	else {
+		document.write("Enter a lower value of step!");
+	}
+
+	//Вывести таблицу умножения числа 5
+	//Оператор while
+	var i = 1;
+	document.write("<br><br>while(){} ::: Multiplication table of 5: ");
+	while(i <= 10) {
+		document.write("<br>5 * " + i + " = " + (5*i));
+		i++;
+	}
+
+	//Вывести таблицу умножения числа 5
+	//Оператор do...while
+	i = 1;
+	document.write("<br><br>do{} while() ::: Multiplication table of 5: ");
+	do {
+		document.write("<br>5 * " + i + " = " + (5*i));
+		i++;
+	}
+	while (i <= 10);
+
+	//Предложить пользователю указать свой возраст, причём если возраст будет
+	//указан некорректно (меньше 5-ти или больше ста лет),
+	//то предлагать осуществлять ввод до тех пор, пока не будет введено корректное значение.
+	//Далее вывести сообщение:
+	//	если возраст меньше 25, то вывести сообщение "Вы молодой"
+	//	если возраст меньше 65 – "Вы зрелый", иначе – "Вы мудрый
+
+	var error = true;
+	do
+	{
+		var userAge = parseInt(prompt("Enter your age: "));
+		if(userAge < 5 || userAge > 100){
+			//var userAge = parseInt(prompt("Please, enter your age again: "));
+			error = true;
+		}
+		else {
+			error = false;
+			if (userAge <= 25) document.write("<br><br> При возрасте " + userAge + " - Вы молодой");
+			else if (userAge <= 65) document.write("<br><br> При возрасте " + userAge + " - Вы зрелый");
+			else document.write("<br><br> При возрасте " + userAge + " - Вы мудрый");
+		}
+	}
+	while (error == true)
+
+
+	//В небоскребе N этажей и всего один подъезд;
+	//на каждом этаже по 3 квартиры; 
+	//лифт может останавливаться только на нечетных 	этажах. 
+	//Человек садится в лифт и набирает номер нужной ему квартиры М. 
+	//На какой этаж должен доставить лифт пассажира?
+	//После этого спросить у пассажира: "Желает ли он продолжить проезд?"
+	do {
+		var apartment = 0;
+		var floor = 0;
+		var numOfApartment = parseInt(prompt("Enter an number of your apartment: "));
+		while(apartment < numOfApartment) {
+			apartment += 3;
+			floor += 1;
+		}
+		if (floor % 2 == 0) {
+			floor--;
+		}
+		document.write("<br><br>Your apartment is located on the " + floor + " floor");
+		var nextFloor = confirm("Go to another apartment?")
+	}
+	while (nextFloor == true)
+
+	</script>
+</body>
+</html>
