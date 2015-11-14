@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [];
+		for (var i = 0; i <= 100; i++) {
+			for (var j = 0; j <= 100; j++) {
+				if (i == (j + 3)) {
+					arr.push(i);
+				}
+			}
+		}
+
+		for (var i = 0; i < arr.length; i++) {
+			document.write(arr[i] + ", ");
+		}
+
+		//::::::::::::::::::::::::::::::::
+		document.write("<br><br>");
+
+		var oddArr = [];
+		for (var i = arr.length; i > 0; i--) {
+			num = arr.pop();
+			if (num % 3 == 0) {
+				oddArr.push(num);
+			}
+		}
+
+		for (var i = 0; i < oddArr.length; i++) {
+			document.write(oddArr[i]+", ");
+		}
+
+		//::::::::::::::::::::::::::::::::
+		document.write("<br><br>");
+
+		var arrInter = [];
+		for (var i = 0; i < oddArr.length; i++) {
+			if (oddArr[i] >= 20 && oddArr[i] <= 50) {
+				arrInter.push(oddArr[i]);
+			}
+		}
+
+		for (var i = 0; i < arrInter.length; i++) {
+			document.write(arrInter[i] + ", ");
+		}
+
+		//::::::::::::::::::::::::::::::::
+		document.write("<br><br>");
+
+		var notebook = {
+			"model": "Acer",
+			"color": "black",
+			"ram": "4gb",
+			"vram": "1gb",
+			"hdd": "500gb"
+		};
+
+		for (prop in notebook) {
+			document.write(prop + ": " + notebook[prop] + "<br>");
+		}
+
+
+
+	</script>
+</body>
+</html>
