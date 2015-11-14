@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//var sum = function(a, b){
+
+	//};
+	//var mult = function(a, b){
+
+	//};
+
+	//function doOperation(a, b, func){
+	//	return func(a, b);
+	//}
+
+	//doOperation(1, 2, sum);
+	//doOperation(1, 2, mult);
+	//doOperation(1, 2, function(x, y){ return x+y-(x*y); });
+
+	//var intervalTime = 2000;
+	//var linkToInterval;
+	//var counter = 0;
+
+	//function logTime(){
+	//	console.log((new Date()).toTimeString());
+	//	counter++;
+	//	if(counter == 10){
+	//		clearInterval(linkToInterval);
+	//	}
+	//}
+
+	//linkToInterval = setInterval(logTime, intervalTime);
+
+
+	function printMessage (name, message) {
+		console.log("User with name " + name + " says:\n");
+		console.log(message);
+		console.log("-----------------------------------------");
+	}
+
+	printMessage("Alex", "Hello!");
+	printMessage("Masha", "Hey!");
+
+	var counter = 0;
+	function calc(a,b,c,d,operator) {
+		var one = a/b;
+		var two = c/d;
+
+		if (operator == "+") {
+			counter++;
+			return one + two;
+		}
+		else if (operator == "-") {
+			counter++;
+			return one - two;
+		}
+		else if (operator == "*") {
+			counter++;
+			return one * two;
+		}
+		else if (operator == "/") {
+			counter++;
+			return one / two;
+		}
+		else {
+			counter++;
+			return "Enter in last argument + or - or / or *.";
+		}
+	}	
+	console.log("calc: " + calc(10,2,20,2,"+"));
+	console.log("calc: " + calc(10,2,20,2,"+"));
+	console.log("calc: " + calc(10,2,20,2,"as"));
+
+	console.log("counter: " + counter);
+
+
+	var intervalTime = 1000;
+	var linkToInterval;
+	var counter = 0;
+
+	function logTime() {
+		console.log(new Date().toTimeString());
+		counter++;
+		if (counter == 10) {
+			clearInterval(linkToInterval);
+		}
+	}
+
+	linkToInterval = setInterval(logTime, intervalTime);
+
+	var car = {
+		color: "red",
+		engine: 10,
+		name: "bmw",
+		active: false,
+		start: function() {
+			this.active = true;
+			console.log("Car is started");
+		},
+		stop: function() {
+			this.active = false;
+			console.log("Car is stopped");
+		},
+		go: function() {
+			if (this.active) {
+				color = "green";
+				console.log("Car is running");
+			}
+			else {
+				console.log("Please start first");
+			}
+		}
+	};
+
+	car.start();
+	car.stop();
+	car.go();
+	car.start();
+	car.go();
+	car.stop();
+
+
+
+
+
+	</script>
+</body>
+</html>
