@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// ::::::::: LabWork #5
+	//var cars = [];
+//
+	//for (var i = 0; i<5; i++) {
+	//	var firm = prompt("Enter firm: ");
+	//	var model = prompt("Enter model: ");
+	//	var engine = parseInt(prompt("Enter Engine Displacement: "));
+//
+	//	cars.push({
+	//		"FirmName": firm,
+	//		"ModelName": model,
+	//		"EngineDisplacement": engine
+	//	});
+	//}
+//
+	//for (var i = 0; i < cars.length; i++) {
+	//	if(cars[i].EngineDisplacement > 2) {
+	//		console.dir(cars[i]);
+	//	}
+	//}
+
+	var text = "About Comparing strings: String Objects are Type Object, not String! String objects are rarely used, so the following results might be surprising. When comparing a number and a string, the string is converted to a number value. JavaScript attempts to convert the string numeric literal to a Number type value. First, a mathematical value is derived from the string numeric literal. Next, this value is rounded to nearest Number type value.";
+
+	var searchText = "value";
+	var counter = 0;
+	var nextIndex = 0;
+	var foundIndex;
+	do {
+		foundIndex = text.indexOf(searchText, nextIndex);
+
+		if (foundIndex != -1) {
+			counter++;
+
+			//if(foundIndex == 0)
+			//if(!foundIndex) {
+			//	nextIndex = searchText.length + 1;
+			//}
+			//else {
+			//	nextIndex = foundIndex + searchText.length;
+			//}
+			nextIndex = foundIndex + searchText.length;
+			//nextIndex = !foundIndex ? (searchText.length + 1) : (foundIndex + searchText.length);
+		}
+
+	}
+	while (foundIndex != -1)
+	console.log(counter);
+	// ::::::: regular expressions
+	var telNumb = "sdgsdgsd +38 (093) 123-45-67 asa"
+	var pattern = /\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}/;
+
+	console.log(pattern.exec(telNumb));
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
