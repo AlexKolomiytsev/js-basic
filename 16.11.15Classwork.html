@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function loop(x) {
+			if (x>=10) return;
+			loop(x+1);
+			console.log("qwerty");
+		}
+		//FACTORIAL 
+		//#1
+		function factorial(n) {
+			//if (n == 1) {
+			//	return n;
+			//}
+			//n *= factorial(n-1);
+			//return n;
+			if (n == 1) {
+				return n;
+			}
+			var res = n * factorial(n-1);
+			return res;
+		}
+		fact = factorial(5);
+		console.log(fact);
+		//#2
+		var n = 5;
+		var res = 1;
+		for (var i = n; i >= 1; i--) {
+			var res = i * res;
+		}
+		console.log(res);
+
+		//FIBONACHI
+		var counter = 0;
+		function fibonachi(n) {
+			console.log(counter++);
+			if (n == 0) return 0;
+			else if (n == 1) return 1;
+			else return fibonachi(n-1) + fibonachi(n-2);
+		}
+		console.log(fibonachi(6));
+
+		//ARGUMENTS
+		function args() {
+			console.log("numbers of arguments: " + arguments.length);
+			for (var i = 0; i < arguments.length; i++) {
+				console.log("arg["+i+"] --- "+arguments[i]);
+			}
+		}
+		args(12, "strrtr", 9.5, 1, "olo", "qwa", 999.99);
+
+
+	</script>
+</body>
+</html>
