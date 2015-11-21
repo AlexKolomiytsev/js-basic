@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		// --- 1 --- Define a function max() that takes two numbers as arguments and returns the largest of them.
+		//Use the if-then-else construct available in Javascript.
+		console.log("--- 1 ---");
+		function max(a,b) {
+			if (a>b) return a;
+			else return b;
+		}
+		console.log(max(10,15));
+
+		// --- 2 --- Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
+		console.log("--- 2 ---");
+		function maxOfThree(a,b,c) {
+			var max = 0;
+			if (a>b) max = a;
+			else max = b;
+			if (max > c) return max;
+			else return c;
+		}
+		console.log(maxOfThree(51, 15, 10));
+
+		// --- 3 --- Write a function that takes a character (i.e. a string of length 1)
+		//and returns true if it is a vowel, false otherwise.
+		console.log("--- 3 ---");
+		function vowel(str) {
+			if (str.length == 1) {
+				var vowel = false;
+				if (str.toLowerCase() > str) {
+					vowel = true;
+				}
+				return vowel;
+			}
+			else return "Enter a string of length 1";
+		}
+		console.log(vowel("Q"));
+
+		// --- 4 --- Write a function translate() that will translate a text into "rövarspråket".
+		//That is, double every consonant and place an occurrence of "o" in between.
+		//For example, translate("this is fun") should return the string "tothohisos isos fofunon".
+		console.log("--- 4 ---");
+		var consonantReg = [/t/g, /d/g, /f/g, /h/g, /j/g, /k/g, /l/g, /m/g, /n/g, /p/g, /q/g, /r/g, /t/g, /v/g, /w/g, /z/g];
+		var consonant = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+		function isLetterConsonant(letter) {
+			isConsonant = false;
+			for (var i = 0; i < consonant.length; i++) {
+				if (letter == consonant[i]) {
+					isConsonant = true;
+					break;
+				}
+			}
+			return isConsonant;
+		}
+
+		function translate(str) {
+			var newStr = "";
+			var parseStr = str.split("");
+			for(var i = 0; i < parseStr.length; i++) {
+				if (isLetterConsonant(parseStr[i])) {
+					newStr += parseStr[i] + "o" + parseStr[i];
+				}
+				else newStr += parseStr[i];
+			}
+			return newStr;
+		}
+
+		console.log(translate("Alexander"));
+
+		// --- 5 --- Define a function sum() and a function multiply() that sums and multiplies (respectively)
+		//all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10,
+		//and multiply([1,2,3,4]) should return 24.
+		console.log("--- 5 ---");
+		var result = 0;
+		function sum(arr) {
+			result = 0;
+			for (var i = 0; i < arr.length; i++) {
+				result += arr[i];
+			}
+			return result;
+		}
+
+		function multiply(arr) {
+			result = 1;
+			for (var i = 0; i < arr.length; i++) {
+				result *= arr[i];
+			}
+			return result;
+		}
+
+		function doOperation(arr, func) {
+			return func(arr);
+		}
+
+		var resSum = doOperation([1,2,3,4], sum);
+		var resMult = doOperation([1,2,3,4], multiply);
+
+		console.log(resSum);
+		console.log(resMult);
+
+		// --- 6 --- Define a function reverse() that computes the reversal of a string.
+		//For example, reverse("jag testar") should return the string "ratset gaj".
+		console.log("--- 6 --- ");
+		var newStr = "";
+		function reverse(str) {
+			for (var i = str.length - 1; i >= 0; i--) {
+				newStr += str[i];
+			}
+			return newStr;
+		}
+		console.log(reverse("Alexander"));
+
+		// --- 7 --- Represent a small bilingual lexicon as a Javascript object in the following fashion
+		//{"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"}
+		//and use it to translate your Christmas cards from English into Swedish.
+		console.log("--- 7 --- ");
+		var EngToSwedish = {
+			merry: "god",
+			christmas: "jul",
+			and: "och",
+			happy: "gott",
+			"new": "nyyt",
+			year: "ar"
+		}
+		newText = "";
+		function translater(text) {
+			parseText = text.split(" ");
+			for (var i = 0; i < parseText.length; i++) {
+				for (prop in EngToSwedish) {
+					if (parseText[i] == prop) {
+						newText += EngToSwedish[prop] + " ";
+					}
+				}
+			}
+			return newText;
+		}
+		console.log(translater("merry christmas and happy new year"));
+
+		// --- 8 --- Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
+		console.log("--- 8 --- ");
+		var lengths = [];
+		function findLongestWord(arrStr) {
+			parseArrStr = arrStr.split(" ");
+			//var lengths = [];
+			for (var i = 0; i < parseArrStr.length; i++) {
+				lengths.push(parseArrStr[i].length);
+			}
+			
+			for (var i = 0; i < lengths.length; i++) {
+				for (var j = lengths.length - 1; j > i; j--) {
+					if (lengths[j-1] > lengths[j]) {
+						temp = lengths[j-1];
+						lengths[j-1] = lengths[j];
+						lengths[j] = temp;
+					}
+				}
+			}
+			
+			for (var i = 0; i < parseArrStr.length; i++) {
+				if (lengths[lengths.length-1] == parseArrStr[i].length) {
+					//console.log("qwqw");
+					console.log(parseArrStr[i] + " ----- " + lengths[lengths.length-1] + " symbols");
+				}
+			}
+		}
+
+		findLongestWord("merry qwqwqweqwhcdfhdfdhdfjdfjdf christmas and happy new year dgssdgsdgsdghdsdgsd")
+
+		// --- 9 --- Write a function filterLongWords() that takes an array of words
+		//and an integer i and returns the array of words that are longer than i.
+		console.log("--- 9 --- ");
+		var longWords = [];
+		function filterLongWords(words, num) {
+			parseWords = words.split(" ");
+			for (var i = 0; i < parseWords.length; i++) {
+				if (parseWords[i].length > num) {
+					longWords.push(parseWords[i]);
+				}
+			}
+			return longWords;
+		}  
+		var longerThan5 = filterLongWords("one two three seven eleven twelve", 5);
+		for (var i = 0; i < longerThan5.length; i++) {
+			console.log(longerThan5[i]);
+		}
+
+		// --- 10 --- Write a function charFreq() that takes a string and builds
+		//a frequency listing of the characters contained in it. 
+		//Represent the frequency listing as a Javascript object. 
+		//Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
+		console.log("--- 10 --- ");
+		var counter = 0;
+		function charFreq(str) {
+			parseStr = str.split("");
+			obj = {};
+			for (var i = 0; i < parseStr.length; i++) {
+				obj[parseStr[i]] = true;
+			}
+			for (prop in obj) {
+				for (var i = 0; i < parseStr.length; i++) {
+					if (prop == parseStr[i]) counter++;
+				}
+				obj[prop] = counter;
+				counter = 0;
+			}
+			return obj;
+		}
+		console.dir(charFreq("ngjsdbgksdjhgks"));
+	</script>
+</body>
+</html>
